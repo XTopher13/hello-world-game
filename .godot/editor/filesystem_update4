@@ -1,15 +1,2 @@
-res://Assets/Scenes/node_2d.tscn
-res://Scenes/node_2d.tscn
-res://Assets/LICENSE & CREDITS.txt
-res://Scenes/Game.tscn
 res://Scenes/player.tscn
 res://Scripts/player.gd
-res://Scenes/platform.tscn
-res://Scenes/coin.tscn
-res://Scripts/coin.gd
-res://Scripts/killzone.gd
-res://Scenes/killzone.tscn
-res://Scenes/slime.tscn
-res://Scripts/slime.gd
-res://Scripts/game_manager.gd
-res://default_bus_layout.tres
