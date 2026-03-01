@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://xsfbtri4xhp" path="res://Utility/kill_zone.gd" id="1_4apcc"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1eyuv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4apcc"]
+size = Vector2(8, 460)
 
 [node name="KillZone" type="Area2D" unique_id=1628808322]
 script = ExtResource("1_4apcc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=32488311]
-shape = SubResource("WorldBoundaryShape2D_1eyuv")
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_4apcc")
 
 [node name="Timer" type="Timer" parent="." unique_id=1768374740]
 

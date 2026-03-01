@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://285xjcxbqnsq" path="res://Utility/bounce_zone.gd" id="1_l3ceb"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l3ceb"]
-normal = Vector2(0, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3ceb"]
+size = Vector2(800, 8)
 
 [node name="BounceBoundary" type="Area2D" unique_id=1969522939]
 script = ExtResource("1_l3ceb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=996271366]
-shape = SubResource("WorldBoundaryShape2D_l3ceb")
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_l3ceb")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
