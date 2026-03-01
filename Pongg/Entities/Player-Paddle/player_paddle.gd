@@ -4,6 +4,8 @@ extends Area2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@onready var score_manager: Control = $"../ScoreManager"
+
 var width
 var height
 #var screen_pos: Vector2
@@ -40,6 +42,7 @@ func _physics_process(_delta: float) -> void:
 	
 func _on_area_entered(area: Area2D) -> void:
 	if(area is BallArea):
+		score_manager.add_point()
 		var new_angle = 0
 		if(area.angle < 0):
 			new_angle = deg_to_rad(posmod(floor(rad_to_deg(area.angle)) - 90,-180))
@@ -48,3 +51,4 @@ func _on_area_entered(area: Area2D) -> void:
 		area.speed += 15
 		print(rad_to_deg(new_angle))
 		area.angle = new_angle
+		

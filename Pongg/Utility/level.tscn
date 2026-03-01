@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsjepd6q85d0m" path="res://Utility/level.gd" id="1_c547a"]
 [ext_resource type="PackedScene" uid="uid://cltn4ookc5lil" path="res://Utility/bounce_zone.tscn" id="2_8bhmt"]
+[ext_resource type="PackedScene" uid="uid://dsn5jet87ep55" path="res://Utility/score.tscn" id="2_c547a"]
 [ext_resource type="PackedScene" uid="uid://d0mp1s48pl8fs" path="res://Utility/kill_zone.tscn" id="3_27yg2"]
 
 [node name="Level" type="Node2D" unique_id=493946554]
@@ -9,6 +10,13 @@ script = ExtResource("1_c547a")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=192680331]
 zoom = Vector2(1.5, 1.5)
+
+[node name="ScoreManager" parent="." unique_id=1364364545 instance=ExtResource("2_c547a")]
+unique_name_in_owner = true
+offset_left = -220.0
+offset_top = -107.0
+offset_right = -220.0
+offset_bottom = -107.0
 
 [node name="Top" parent="." unique_id=1969522939 instance=ExtResource("2_8bhmt")]
 position = Vector2(3, -216)
@@ -27,4 +35,4 @@ rotation = -1.5707964
 
 [connection signal="area_entered" from="Top" to="." method="_on_top_area_entered"]
 [connection signal="area_entered" from="PlayerPaddle" to="PlayerPaddle" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@26687" to="@Area2D@26687" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@68048" to="@Area2D@68048" method="_on_area_entered"]
