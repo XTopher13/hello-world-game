@@ -1,5 +1,5 @@
-@tool
 extends Node2D
+@onready var high_score: Label = $HighScore
 
 var ball_scene = preload("res://Entities/Ball/ball.tscn")
 var player_scene = preload("res://Entities/Player-Paddle/player_paddle.tscn")
@@ -26,6 +26,7 @@ func _ready() -> void:
 	left.position = Vector2(-edge_of_screen + left.width/2,0)
 	right.position = Vector2(edge_of_screen - left.width/2,0)
 	
+	high_score.text = "High Score: " + str(GameState.high_score)
 	print("ready")
 
 

@@ -9,7 +9,7 @@ size = Vector2(8, 460)
 script = ExtResource("1_4apcc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=32488311]
-position = Vector2(3, 0)
+position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_4apcc")
 
 [node name="Timer" type="Timer" parent="." unique_id=1768374740]

@@ -49,6 +49,6 @@ func _on_area_entered(area: Area2D) -> void:
 		else:
 			new_angle = deg_to_rad(posmod(floor(rad_to_deg(area.angle)) + 90, 180))
 		area.speed += 15
-		print(rad_to_deg(new_angle))
+		#print(rad_to_deg(new_angle))
 		area.angle = new_angle
 		

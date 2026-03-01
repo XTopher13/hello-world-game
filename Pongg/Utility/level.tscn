@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cltn4ookc5lil" path="res://Utility/bounce_zone.tscn" id="2_8bhmt"]
 [ext_resource type="PackedScene" uid="uid://dsn5jet87ep55" path="res://Utility/score.tscn" id="2_c547a"]
 [ext_resource type="PackedScene" uid="uid://d0mp1s48pl8fs" path="res://Utility/kill_zone.tscn" id="3_27yg2"]
+[ext_resource type="FontFile" uid="uid://dpjstcoo7wbi1" path="res://Entities/Assets/fonts/PixelOperator8.ttf" id="3_38y1j"]
 
 [node name="Level" type="Node2D" unique_id=493946554]
 script = ExtResource("1_c547a")
@@ -13,10 +14,25 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="ScoreManager" parent="." unique_id=1364364545 instance=ExtResource("2_c547a")]
 unique_name_in_owner = true
-offset_left = -220.0
-offset_top = -107.0
-offset_right = -220.0
-offset_bottom = -107.0
+offset_left = -1.0
+offset_top = -182.0
+offset_right = -1.0
+offset_bottom = -182.0
+
+[node name="HighScore" type="Label" parent="." unique_id=979923173]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = 174.0
+offset_right = 21.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4251678, 0.7776587, 0.38396895, 1)
+theme_override_fonts/font = ExtResource("3_38y1j")
 
 [node name="Top" parent="." unique_id=1969522939 instance=ExtResource("2_8bhmt")]
 position = Vector2(0, -216)
@@ -32,5 +48,6 @@ rotation = 3.1415927
 [node name="KillZone_Left2" parent="." unique_id=505542912 instance=ExtResource("3_27yg2")]
 position = Vector2(390, 0)
 
+[connection signal="area_entered" from="Ball" to="Ball" method="_on_area_entered"]
 [connection signal="area_entered" from="PlayerPaddle" to="PlayerPaddle" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@44621" to="@Area2D@44621" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@69421" to="@Area2D@69421" method="_on_area_entered"]
