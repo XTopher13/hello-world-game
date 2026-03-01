@@ -38,13 +38,13 @@ func _physics_process(_delta: float) -> void:
 		pass
 	mouse_pos = get_viewport().get_mouse_position() # use viewport mouse for checking if on screen
 	
-func _on_area_entered(area: BallArea) -> void:
-	print("paddle")
-	var new_angle = 0
-	if(area.angle < 0):
-		new_angle = deg_to_rad(posmod(floor(rad_to_deg(area.angle)) - 90,-180))
-	else:
-		new_angle = deg_to_rad(posmod(floor(rad_to_deg(area.angle)) + 90, 180))
-	area.speed += 15
-	print(rad_to_deg(new_angle))
-	area.angle = new_angle
+func _on_area_entered(area: Area2D) -> void:
+	if(area is BallArea):
+		var new_angle = 0
+		if(area.angle < 0):
+			new_angle = deg_to_rad(posmod(floor(rad_to_deg(area.angle)) - 90,-180))
+		else:
+			new_angle = deg_to_rad(posmod(floor(rad_to_deg(area.angle)) + 90, 180))
+		area.speed += 15
+		print(rad_to_deg(new_angle))
+		area.angle = new_angle

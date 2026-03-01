@@ -2,12 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsjepd6q85d0m" path="res://Utility/level.gd" id="1_c547a"]
 [ext_resource type="PackedScene" uid="uid://cltn4ookc5lil" path="res://Utility/bounce_zone.tscn" id="2_8bhmt"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8bhmt"]
-normal = Vector2(0, 1)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_27yg2"]
-distance = -432.00003
+[ext_resource type="PackedScene" uid="uid://d0mp1s48pl8fs" path="res://Utility/kill_zone.tscn" id="3_27yg2"]
 
 [node name="Level" type="Node2D" unique_id=493946554]
 script = ExtResource("1_c547a")
@@ -18,16 +13,18 @@ zoom = Vector2(1.5, 1.5)
 [node name="Top" parent="." unique_id=1969522939 instance=ExtResource("2_8bhmt")]
 position = Vector2(3, -216)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Top" unique_id=1528939371]
-shape = SubResource("WorldBoundaryShape2D_8bhmt")
-
 [node name="Bottom" parent="." unique_id=1035231360 instance=ExtResource("2_8bhmt")]
 position = Vector2(-2, 217)
 rotation = -3.1375797
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=797767457]
-position = Vector2(-3.2623467, 433.0166)
-rotation = 3.1375797
-shape = SubResource("WorldBoundaryShape2D_27yg2")
+[node name="KillZone_Left" parent="." unique_id=1628808322 instance=ExtResource("3_27yg2")]
+position = Vector2(-385, 1)
+rotation = 1.5707964
+
+[node name="KillZone_Left2" parent="." unique_id=505542912 instance=ExtResource("3_27yg2")]
+position = Vector2(385, 0)
+rotation = -1.5707964
 
 [connection signal="area_entered" from="Top" to="." method="_on_top_area_entered"]
+[connection signal="area_entered" from="PlayerPaddle" to="PlayerPaddle" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@26687" to="@Area2D@26687" method="_on_area_entered"]

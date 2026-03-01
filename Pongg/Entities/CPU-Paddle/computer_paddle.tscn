@@ -2,10 +2,6 @@
 
 [ext_resource type="Script" uid="uid://285xjcxbqnsq" path="res://Utility/bounce_zone.gd" id="1_6b4hj"]
 [ext_resource type="Texture2D" uid="uid://cesxws8g87w4k" path="res://Entities/Assets/paddle.png" id="1_kejk3"]
-[ext_resource type="PackedScene" uid="uid://cltn4ookc5lil" path="res://Utility/bounce_zone.tscn" id="3_r8r4m"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8r4m"]
-size = Vector2(64, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8544d"]
 size = Vector2(8, 64)
@@ -15,12 +11,6 @@ script = ExtResource("1_6b4hj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=182702083]
 texture = ExtResource("1_kejk3")
-
-[node name="BounceBoundary" parent="." unique_id=1969522939 instance=ExtResource("3_r8r4m")]
-rotation = 1.5707964
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BounceBoundary" unique_id=1175464126]
-shape = SubResource("RectangleShape2D_r8r4m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=622303057]
 shape = SubResource("RectangleShape2D_8544d")

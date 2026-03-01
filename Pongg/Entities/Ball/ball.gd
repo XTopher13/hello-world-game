@@ -1,7 +1,7 @@
 class_name BallArea
 extends Area2D
 
-var speed = 100
+var speed = 500
 
 var width
 var angle = deg_to_rad(-45)
