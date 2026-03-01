@@ -3,11 +3,14 @@
 [ext_resource type="Script" uid="uid://bsjepd6q85d0m" path="res://Utility/level.gd" id="1_c547a"]
 [ext_resource type="PackedScene" uid="uid://cltn4ookc5lil" path="res://Utility/bounce_zone.tscn" id="2_8bhmt"]
 [ext_resource type="PackedScene" uid="uid://dsn5jet87ep55" path="res://Utility/score.tscn" id="2_c547a"]
+[ext_resource type="PackedScene" uid="uid://cn8cqqnb416h3" path="res://Utility/main_menu.tscn" id="2_gxwdn"]
 [ext_resource type="PackedScene" uid="uid://d0mp1s48pl8fs" path="res://Utility/kill_zone.tscn" id="3_27yg2"]
 [ext_resource type="FontFile" uid="uid://dpjstcoo7wbi1" path="res://Entities/Assets/fonts/PixelOperator8.ttf" id="3_38y1j"]
 
 [node name="Level" type="Node2D" unique_id=493946554]
 script = ExtResource("1_c547a")
+
+[node name="MainMenu" parent="." unique_id=559788992 instance=ExtResource("2_gxwdn")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=192680331]
 zoom = Vector2(1.5, 1.5)
@@ -47,7 +50,3 @@ rotation = 3.1415927
 
 [node name="KillZone_Left2" parent="." unique_id=505542912 instance=ExtResource("3_27yg2")]
 position = Vector2(390, 0)
-
-[connection signal="area_entered" from="Ball" to="Ball" method="_on_area_entered"]
-[connection signal="area_entered" from="PlayerPaddle" to="PlayerPaddle" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@69421" to="@Area2D@69421" method="_on_area_entered"]

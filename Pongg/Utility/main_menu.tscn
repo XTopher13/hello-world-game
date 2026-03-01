@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cn8cqqnb416h3"]
+
+[ext_resource type="Script" uid="uid://b6chs5tk34doy" path="res://Utility/main_menu.gd" id="1_a8idn"]
+[ext_resource type="FontFile" uid="uid://dpjstcoo7wbi1" path="res://Entities/Assets/fonts/PixelOperator8.ttf" id="1_bpoc2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8idn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bpoc2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5puen"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okxei"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kjyi"]
+
+[node name="MainMenu" type="Control" unique_id=559788992]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a8idn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1608372631]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=402394620]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=829075955]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1796353362]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bpoc2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a8idn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bpoc2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5puen")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_okxei")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4kjyi")
+text = "Play"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

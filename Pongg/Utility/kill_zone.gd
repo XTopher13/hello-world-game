@@ -18,4 +18,5 @@ func _on_area_entered(area: Area2D) -> void:
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1.0
 	GameState.current_score = 0
+	GameState.is_in_menu = true
 	get_tree().reload_current_scene()

@@ -14,8 +14,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var direction = Vector2(cos(angle), sin(angle))
-	position += direction * speed * delta
+	if(!GameState.is_in_menu):
+		var direction = Vector2(cos(angle), sin(angle))
+		position += direction * speed * delta
 
 
 func _on_area_entered(area: Area2D) -> void:
