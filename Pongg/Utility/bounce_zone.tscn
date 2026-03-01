@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cltn4ookc5lil"]
+
+[ext_resource type="Script" uid="uid://285xjcxbqnsq" path="res://Utility/bounce_zone.gd" id="1_l3ceb"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bhp8a"]
+normal = Vector2(0, 1)
+
+[node name="BounceBoundary" type="Area2D" unique_id=1969522939]
+script = ExtResource("1_l3ceb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1725991150]
+shape = SubResource("WorldBoundaryShape2D_bhp8a")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

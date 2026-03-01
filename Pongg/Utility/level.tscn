@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b0jaoh383ap1t"]
+
+[ext_resource type="Script" uid="uid://bsjepd6q85d0m" path="res://Utility/level.gd" id="1_c547a"]
+[ext_resource type="PackedScene" uid="uid://cltn4ookc5lil" path="res://Utility/bounce_zone.tscn" id="2_8bhmt"]
+
+[node name="Level" type="Node2D" unique_id=493946554]
+script = ExtResource("1_c547a")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=192680331]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Top" parent="." unique_id=1969522939 instance=ExtResource("2_8bhmt")]
+position = Vector2(3, -216)
+
+[node name="Bottom" parent="." unique_id=1035231360 instance=ExtResource("2_8bhmt")]
+position = Vector2(-2, 217)
+rotation = -3.1375797
+
+[connection signal="area_entered" from="Top" to="." method="_on_top_area_entered"]
