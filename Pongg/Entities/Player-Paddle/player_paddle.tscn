@@ -2,19 +2,17 @@
 
 [ext_resource type="Script" uid="uid://2o6mwp8c2imw" path="res://Entities/Player-Paddle/player_paddle.gd" id="1_k1tq6"]
 [ext_resource type="Texture2D" uid="uid://cesxws8g87w4k" path="res://Entities/Assets/paddle.png" id="1_pu3u0"]
-[ext_resource type="PackedScene" uid="uid://cltn4ookc5lil" path="res://Utility/bounce_zone.tscn" id="3_xbnq4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1tq6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxjfv"]
 size = Vector2(8, 64)
 
-[node name="PlayerPaddle" type="Area2D" unique_id=829330762]
+[node name="PlayerPaddle" type="Area2D" unique_id=1697535786]
 script = ExtResource("1_k1tq6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2117379347]
 texture = ExtResource("1_pu3u0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=611726013]
-shape = SubResource("RectangleShape2D_k1tq6")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=140748303]
+shape = SubResource("RectangleShape2D_qxjfv")
 
-[node name="BounceBoundary" parent="." unique_id=1969522939 instance=ExtResource("3_xbnq4")]
-rotation = -1.5707964
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

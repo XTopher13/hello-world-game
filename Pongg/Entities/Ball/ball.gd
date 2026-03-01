@@ -1,7 +1,7 @@
 class_name BallArea
 extends Area2D
 
-const SPEED = 100
+var speed = 100
 
 var width
 var angle = deg_to_rad(-45)
@@ -13,4 +13,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var direction = Vector2(cos(angle), sin(angle))
-	position += direction * SPEED * delta
+	position += direction * speed * delta
